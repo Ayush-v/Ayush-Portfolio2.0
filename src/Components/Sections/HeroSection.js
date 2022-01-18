@@ -105,7 +105,8 @@ const MockupWrapper = styled.div`
   }
 
   @media only screen and (max-height: 630px) {
-    display: none;
+    /* display: none; */
+    margin-top: -55px;
   }
 `;
 

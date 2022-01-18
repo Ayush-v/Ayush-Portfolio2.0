@@ -69,8 +69,8 @@ export default AboutSection;
 
 const Container = styled.div`
   position: relative;
-  height: 90vh;
-  max-height: 920px;
+  /* height: 90vh; */
+  /* max-height: 920px; */
   overflow: hidden;
 
   @media only screen and (min-width: 1000px) {
@@ -148,30 +148,44 @@ const ButtonWrapper = styled.div`
 `;
 
 const ButtonResume = styled.button`
-  padding: 0.7em 2.5em;
+  /* padding: 0.7em 2.5em; */
+  width: 150px;
+  height: 50px;
   background-color: #8261ff;
   border-radius: 4px;
 
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 
   text-align: center;
 
   .resume {
     width: 16px;
-    margin-top: 2px;
+    /* margin-top: 2px; */
   }
 
   cursor: pointer;
+
+  /* &:hover {
+    border: 1px solid white;
+    background: none;
+  } */
 `;
 
 const ButtonHireme = styled.button`
-  padding: 0.65em 3em;
+  width: 150px;
+  height: 50px;
   border: 1px solid white;
   border-radius: 4px;
 
   cursor: pointer;
+
+  /* &:hover {
+    border: none;
+    background-color: #8261ff;
+  } */
 `;
 
 const BlobProfile = styled.img`

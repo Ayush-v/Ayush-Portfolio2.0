@@ -9,6 +9,7 @@ import ToolsSection from "../Components/Sections/ToolsSection";
 const IndexPage = () => {
   return (
     <Layout>
+      <title>Front-End Developer | Ayush</title>
       <HeroSection />
       <AboutSection />
       <ToolsSection />
