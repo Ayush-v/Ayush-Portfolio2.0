@@ -31,22 +31,38 @@ const Navigation = () => {
             </svg>
             <NavMenu>
               <li>
-                <StyledLink to="/#home" className="underline">
+                <StyledLink
+                  to="/#home"
+                  className="underline"
+                  onClick={toggleClass}
+                >
                   &lt;Home/&gt;
                 </StyledLink>
               </li>
               <li>
-                <StyledLink to="/#about" className="underline">
+                <StyledLink
+                  to="/#about"
+                  className="underline"
+                  onClick={toggleClass}
+                >
                   &lt;About/&gt;
                 </StyledLink>
               </li>
               <li>
-                <StyledLink to="/#projects" className="underline">
+                <StyledLink
+                  to="/#projects"
+                  className="underline"
+                  onClick={toggleClass}
+                >
                   &lt;Projects/&gt;
                 </StyledLink>
               </li>
               <li>
-                <StyledLink to="/#contact" className="underline">
+                <StyledLink
+                  to="/#contact"
+                  className="underline"
+                  onClick={toggleClass}
+                >
                   &lt;Contact/&gt;
                 </StyledLink>
               </li>
@@ -238,6 +254,12 @@ const StyledLink = styled(Link)`
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    &::after {
+      background: none;
+    }
   }
 
   &:hover {

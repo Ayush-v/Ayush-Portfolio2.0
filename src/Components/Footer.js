@@ -13,7 +13,7 @@ const Footer = () => {
         <p>Ayush 🤟🏻 2022</p>
       </LeftSide>
       <RightSide>
-        <a href="mailto:ayushverma@gmail.com">
+        <a href="mailto:ayushverma1194@gmail.com">
           <img src={mail} alt="instagram" />
         </a>
         <a
@@ -50,5 +50,34 @@ const RightSide = styled.div`
 
   a {
     margin: 0;
+
+    & {
+      position: relative;
+      color: #ecf0f1;
+      transition: 0.5s;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 100%;
+      left: 0%;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: #95a5a6;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 `;

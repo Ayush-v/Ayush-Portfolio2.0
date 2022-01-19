@@ -39,7 +39,7 @@ const AboutSection = () => {
               </svg>
             </ButtonResume>
             <ButtonHireme>
-              <a href="/">Hire me</a>
+              <a href="/#contact">Hire me</a>
             </ButtonHireme>
           </ButtonWrapper>
           <FollowWrapper>
