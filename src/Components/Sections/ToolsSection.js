@@ -55,7 +55,7 @@ const ToolsSection = () => {
           <br />
           <Skill>
             <img src={poly} alt="poly" />
-            <h3>More Coming Soon...😜</h3>
+            <h3>More Coming Soon...</h3>
           </Skill>
         </div>
       </Wrapper>
@@ -75,8 +75,8 @@ const Wrapper = styled.div`
     margin: 24px 5em;
   }
 
-  @media only screen and (min-width: 1200px) {
-    margin: 6em auto;
+  @media only screen and (min-width: 1300px) {
+    margin: 5em auto;
   }
 `;
 
@@ -105,5 +105,34 @@ const Skill = styled.div`
 
   h3 {
     font-weight: 400;
+
+    & {
+      position: relative;
+      color: #ecf0f1;
+      transition: 0.5s;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 100%;
+      left: 0%;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: #95a5a6;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 `;

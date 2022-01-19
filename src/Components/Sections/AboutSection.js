@@ -9,7 +9,7 @@ import github from "/src/images/others/github.svg";
 
 const AboutSection = () => {
   return (
-    <Container>
+    <Container id="about">
       <Wrapper>
         <TextWrapper>
           <Title>
@@ -45,10 +45,18 @@ const AboutSection = () => {
           <FollowWrapper>
             <h3>You can follow me here:</h3>
             <Social>
-              <a href="/">
+              <a
+                href="https://www.instagram.com/ayush_iosdev/"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <img src={insta} alt="instagram" />
               </a>
-              <a href="/">
+              <a
+                href="https://github.com/Ayush-v"
+                rel="noreferrer"
+                target="_blank"
+              >
                 <img src={github} alt="github" />
               </a>
             </Social>
@@ -91,6 +99,9 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 1200px) {
     flex-direction: row;
     max-width: 1234px;
+  }
+
+  @media only screen and (min-width: 1300px) {
     margin: 60px auto;
   }
 `;

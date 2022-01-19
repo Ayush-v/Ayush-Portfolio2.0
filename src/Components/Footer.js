@@ -13,13 +13,17 @@ const Footer = () => {
         <p>Ayush 🤟🏻 2022</p>
       </LeftSide>
       <RightSide>
-        <a href="/">
+        <a href="mailto:ayushverma@gmail.com">
           <img src={mail} alt="instagram" />
         </a>
-        <a href="/">
+        <a
+          href="https://www.instagram.com/ayush_iosdev/"
+          rel="noreferrer"
+          target="_blank"
+        >
           <img src={insta} alt="instagram" />
         </a>
-        <a href="/">
+        <a href="https://github.com/Ayush-v" rel="noreferrer" target="_blank">
           <img src={github} alt="github" />
         </a>
       </RightSide>
@@ -37,10 +41,6 @@ const Container = styled.footer`
 
   @media only screen and (min-width: 1200px) {
     margin: 1.5em 5em;
-  }
-
-  @media only screen and (max-height: 630px) {
-    margin-top: 250px;
   }
 `;
 const LeftSide = styled.div``;

@@ -8,7 +8,7 @@ import mockup2 from "/src/images/mockups/mockup2.svg";
 
 const HeroSection = () => {
   return (
-    <Container>
+    <Container id="home">
       <Wrapper>
         <Intro>
           <Title>
@@ -39,7 +39,6 @@ const Container = styled.section`
   max-height: 800px;
 `;
 const Wrapper = styled.div`
-  /* height: 50vh; */
   margin: 0px 1.5em;
   display: flex;
   justify-content: space-between;
@@ -51,6 +50,8 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 1200px) {
     max-width: 1234px;
     flex-direction: row;
+  }
+  @media only screen and (min-width: 1300px) {
     margin: 2em auto;
   }
 `;
@@ -100,13 +101,12 @@ const MockupWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  &:hover {
-    transform: rotate(0deg);
+  @media only screen and (max-height: 630px) {
+    margin-top: -55px;
   }
 
-  @media only screen and (max-height: 630px) {
-    /* display: none; */
-    margin-top: -55px;
+  &:hover img {
+    transform: rotate(0deg);
   }
 `;
 
@@ -115,10 +115,6 @@ const MockupRight = styled.img`
   width: auto;
   transform: rotate(10deg);
   transition: transform 0.8s ease;
-
-  &:hover {
-    transform: rotate(0deg);
-  }
 
   @media only screen and (max-width: 1200px), screen and (max-height: 300px) {
     height: 250px;
@@ -132,16 +128,8 @@ const MockupLeft = styled.img`
   transform: rotate(-6deg);
   transition: transform 0.8s ease;
 
-  &:hover {
-    transform: rotate(0deg);
-  }
-
   @media only screen and (max-width: 1200px), screen and (max-height: 300px) {
     height: 250px;
     margin-top: 30px;
   }
-  /* @media only screen and (max-height: 300px) {
-    height: 250px;
-    margin-top: 30px;
-  } */
 `;

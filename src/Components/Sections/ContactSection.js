@@ -7,7 +7,7 @@ import waves from "/src/images/waves/contactSectionWave.svg";
 
 const ContactSection = () => {
   return (
-    <Container>
+    <Container id="contact">
       <Wrapper>
         <TextWrapper>
           <Title>
@@ -22,7 +22,7 @@ const ContactSection = () => {
           <Mail>
             <div>
               <img src={poly} alt="poly" />
-              <p>ayushverma1194@gmail.com</p>
+              <p className="email-hover">ayushverma1194@gmail.com</p>
             </div>
             <svg
               width="15"
@@ -30,6 +30,10 @@ const ContactSection = () => {
               viewBox="0 0 15 21"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              onClick={() =>
+                navigator.clipboard.writeText("ayushverma1194@gmail.com")
+              }
+              className="copyText"
             >
               <path
                 d="M3.85181 4.66892H5.15378V2.70861C5.15378 2.3292 5.24117 2.03585 5.41597 1.82856C5.59077 1.62129 5.84996 1.51766 6.19353 1.51766H9.26761V5.58586C9.26761 6.08472 9.3746 6.45887 9.58858 6.70831C9.80256 6.95774 10.1205 7.08245 10.5424 7.08245H13.6888V14.0068C13.6888 14.3862 13.6014 14.6796 13.4266 14.8868C13.2518 15.0941 12.9957 15.1978 12.6581 15.1978H11.3381V16.7154H12.7214C13.4809 16.7154 14.0505 16.4923 14.4302 16.0462C14.81 15.6 14.9998 14.9272 14.9998 14.0279V7.51456C14.9998 6.9384 14.9426 6.45184 14.8281 6.05485C14.7135 5.65787 14.5116 5.28724 14.2223 4.94296L10.8318 0.906381C10.5545 0.57615 10.2471 0.342525 9.90954 0.205506C9.572 0.0685013 9.18924 0 8.76128 0H6.1212C5.36172 0 4.79362 0.22484 4.4169 0.674519C4.04017 1.1242 3.85181 1.7952 3.85181 2.68752V4.66892ZM10.4339 5.354V2.21327L13.3724 5.72286H10.7504C10.5394 5.72286 10.4339 5.59991 10.4339 5.354Z"
@@ -76,6 +80,10 @@ const Container = styled.div`
   position: relative;
   height: 90vh;
   max-height: 800px;
+
+  @media only screen and (max-height: 450px) {
+    height: auto;
+  }
 `;
 
 const BackgroundWave = styled.div`
@@ -106,7 +114,7 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 680px) {
     margin: 6em 5em;
   }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1300px) {
     margin: 6em auto;
   }
 `;
@@ -130,6 +138,11 @@ const Title = styled.h1`
 
 const Description = styled.p`
   opacity: 0.9;
+
+  background: -webkit-linear-gradient(47deg, #ffffff, #8261ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const Mail = styled.div`
@@ -140,6 +153,45 @@ const Mail = styled.div`
   div {
     display: flex;
     gap: 12px;
+  }
+
+  .copyText {
+    cursor: pointer;
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  .email-hover {
+    & {
+      position: relative;
+      color: #ecf0f1;
+      transition: 0.5s;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 100%;
+      left: 0%;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: #95a5a6;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
 `;
 
@@ -152,6 +204,14 @@ const InputDiv = styled.div`
   position: relative;
   margin-bottom: 30px;
   /* background-color: aliceblue; */
+
+  input:focus {
+    border-color: #8261ff;
+  }
+
+  textarea:focus {
+    border-color: #8261ff;
+  }
 
   input:focus ~ label,
   input:valid ~ label {
@@ -168,12 +228,13 @@ const InputDiv = styled.div`
   input:not(:disabled):not([type="submit"]):focus ~ label {
     top: -22px;
     font-size: 14px;
-    /* color: #5264ae; */
+
+    color: #8261ff;
   }
   textarea:not(:disabled):not([type="submit"]):focus ~ label {
     top: -22px;
     font-size: 14px;
-    /* color: #5264ae; */
+    color: #8261ff;
   }
 `;
 
@@ -190,6 +251,10 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
+  }
+
+  &:active {
+    border: 1px solid purple;
   }
 `;
 const Label = styled.label`

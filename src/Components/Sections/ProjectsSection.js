@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ProjectsSection = () => {
   return (
-    <Container>
+    <Container id="projects">
       <Wrapper>
         <Title>
           My<span>.projects()</span>
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 680px) {
     margin: 6em 5em;
   }
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1300px) {
     margin: 6em auto;
   }
 `;
