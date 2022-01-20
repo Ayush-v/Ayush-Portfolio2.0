@@ -16,7 +16,9 @@ const ProjectsSection = () => {
 
 export default ProjectsSection;
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 30vh;
+`;
 
 const Wrapper = styled.div`
   max-width: 1234px;

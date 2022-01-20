@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 
 import poly from "/src/images/others/skillpolygon.svg";
 
 import waves from "/src/images/waves/contactSectionWave.svg";
 
 const ContactSection = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_elcdcqi",
+        "template_7kmkmlr",
+        form.current,
+        "user_LFGQyZ8x7AhdGDUhy8oDG"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <Container id="contact">
       <Wrapper>
@@ -46,19 +70,24 @@ const ContactSection = () => {
             </svg>
           </Mail>
         </TextWrapper>
-        <Form method="" action="">
+        <Form ref={form} onSubmit={sendEmail}>
           <InputDiv>
-            <Input type="text" name="name" autoComplete="off" />
+            <Input type="text" name="name" autoComplete="off" required />
             <Label>Name</Label>
           </InputDiv>
 
           <InputDiv>
-            <Input type="email" name="email" autoComplete="off" />
+            <Input type="email" name="email" autoComplete="off" required />
             <Label>Email</Label>
           </InputDiv>
 
           <InputDiv>
-            <TextArea type="email" name="message" autoComplete="off" />
+            <TextArea
+              type="message"
+              name="message"
+              autoComplete="off"
+              required
+            />
             <TLabel>Message</TLabel>
           </InputDiv>
 
@@ -203,7 +232,6 @@ const Form = styled.form`
 const InputDiv = styled.div`
   position: relative;
   margin-bottom: 30px;
-  /* background-color: aliceblue; */
 
   input:focus {
     border-color: #8261ff;
@@ -215,21 +243,21 @@ const InputDiv = styled.div`
 
   input:focus ~ label,
   input:valid ~ label {
-    /* top: -20px;
+    top: -22px;
     font-size: 14px;
-    color: #5264ae; */
+    color: #8261ff;
   }
-
-  input:focus ~ .bar:before,
-  input:focus ~ .bar:after {
-    width: 50%;
+  textarea:focus ~ label,
+  textarea:valid ~ label {
+    top: -22px;
+    font-size: 14px;
+    color: #8261ff;
   }
 
   input:not(:disabled):not([type="submit"]):focus ~ label {
     top: -22px;
     font-size: 14px;
-
-    color: #8261ff;
+    /* color: #8261ff; */
   }
   textarea:not(:disabled):not([type="submit"]):focus ~ label {
     top: -22px;
@@ -248,14 +276,7 @@ const Input = styled.input`
   border: 1px solid #757575;
   color: white;
   border-radius: 7px;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:active {
-    border: 1px solid purple;
-  }
+  outline: none;
 `;
 const Label = styled.label`
   color: rgba(255, 255, 255, 0.9);
@@ -301,7 +322,6 @@ const TLabel = styled.label`
 `;
 
 const SubmitDiv = styled.div`
-  /* background-color: azure; */
   width: 150px;
   height: 50px;
 `;
