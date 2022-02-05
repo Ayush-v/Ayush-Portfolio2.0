@@ -263,7 +263,7 @@ const StyledLink = styled(Link)`
   }
 
   &:hover {
-    color: #95a5a6;
+    color: #8361ff;
   }
 
   &:hover::after {

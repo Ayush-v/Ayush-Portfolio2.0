@@ -70,14 +70,14 @@ const ContactSection = () => {
             </svg>
           </Mail>
         </TextWrapper>
-        <Form ref={form} onSubmit={sendEmail}>
+        <Form ref={form} onSubmit={sendEmail} autoComplete="off">
           <InputDiv>
-            <Input type="text" name="name" autoComplete="off" required />
+            <Input type="text" name="name" required />
             <Label>Name</Label>
           </InputDiv>
 
           <InputDiv>
-            <Input type="email" name="email" autoComplete="off" required />
+            <Input type="email" name="email" required />
             <Label>Email</Label>
           </InputDiv>
 

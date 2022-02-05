@@ -16,17 +16,22 @@ const AboutSection = () => {
             About<span>.me()</span>
           </Title>
           <Description>
-            UI/UX Designer and specialize in IOS Development and Front End
-            webdevelopment
+            Self Taught UI/UX Designer and specialize in IOS Development and
+            Front-End Web Development
           </Description>
           <Description>
-            Pharetra, sed ut quam tristique diam pretium massa neque mauris.
-            Fringilla cursus dui nunc enim eu. Pulvinar lectus ultrices
-            pellentesque sit et integer.
+            Currently Im persuing my Bachelors Degree in Computer Application
+            from
+            <strong> Panjab University, Chandighar </strong>
+          </Description>
+          <Description>
+            Started as a designer desigining websites & mobile apps. started
+            coding for fun but then fell in love with it from then onwards i
+            just love coverting my designs into reality.
           </Description>
           <ButtonWrapper>
             <ButtonResume>
-              <a href="/">resume</a>
+              resume
               <svg viewBox="0 0 11 13" fill="none" className="resume">
                 <path
                   d="M1.99129 12.6732H8.60606C9.23534 12.6732 9.70607 12.5183 10.0182 12.2086C10.3304 11.8989 10.4865 11.4343 10.4865 10.8148V5.14398C10.4865 4.52454 10.3304 4.05996 10.0182 3.75023C9.70607 3.44051 9.23534 3.28564 8.60606 3.28564H7.02059V4.35492H8.59132C8.85679 4.35492 9.06204 4.42498 9.20707 4.56509C9.3521 4.7052 9.42461 4.91537 9.42461 5.1956V10.7632C9.42461 11.0434 9.3521 11.2536 9.20707 11.3937C9.06204 11.5338 8.85679 11.6039 8.59132 11.6039H2.00605C1.74057 11.6039 1.53531 11.5338 1.39029 11.3937C1.24526 11.2536 1.17275 11.0434 1.17275 10.7632V5.1956C1.17275 4.91537 1.24526 4.7052 1.39029 4.56509C1.53531 4.42498 1.74057 4.35492 2.00605 4.35492H3.57677V3.28564H1.99129C1.36693 3.28564 0.897432 3.44051 0.582794 3.75023C0.268158 4.05996 0.11084 4.52454 0.11084 5.14398V10.8148C0.11084 11.4343 0.268158 11.8989 0.582794 12.2086C0.897432 12.5183 1.36693 12.6732 1.99129 12.6732Z"
@@ -38,8 +43,9 @@ const AboutSection = () => {
                 />
               </svg>
             </ButtonResume>
-            <ButtonHireme>
-              <a href="/#contact">Hire me</a>
+            <ButtonHireme href="/#contact">
+              {/* <a href="/#contact">Hire me</a> */}
+              Hire me
             </ButtonHireme>
           </ButtonWrapper>
           <FollowWrapper>
@@ -96,6 +102,10 @@ const Wrapper = styled.div`
   text-align: left;
   padding-bottom: 80px;
 
+  @media only screen and (min-width: 680px) {
+    margin: 60px 5em;
+  }
+
   @media only screen and (min-width: 1200px) {
     flex-direction: row;
     max-width: 1234px;
@@ -146,7 +156,8 @@ const Title = styled.h1`
 `;
 
 const Description = styled.p`
-  opacity: 0.9;
+  opacity: 0.8;
+  font-size: 15px;
 `;
 
 const ButtonWrapper = styled.div`
@@ -158,45 +169,33 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-const ButtonResume = styled.button`
-  /* padding: 0.7em 2.5em; */
+const ButtonResume = styled.a`
   width: 150px;
   height: 50px;
   background-color: #8261ff;
   border-radius: 4px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-
   text-align: center;
 
   .resume {
     width: 16px;
-    /* margin-top: 2px; */
   }
-
   cursor: pointer;
-
-  /* &:hover {
-    border: 1px solid white;
-    background: none;
-  } */
 `;
 
-const ButtonHireme = styled.button`
+const ButtonHireme = styled.a`
   width: 150px;
   height: 50px;
   border: 1px solid white;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   cursor: pointer;
-
-  /* &:hover {
-    border: none;
-    background-color: #8261ff;
-  } */
 `;
 
 const BlobProfile = styled.img`

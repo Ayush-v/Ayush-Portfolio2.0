@@ -47,6 +47,10 @@ const Wrapper = styled.div`
   text-align: left;
   gap: 3em;
 
+  @media only screen and (min-width: 680px) {
+    margin: 0px 5em;
+  }
+
   @media only screen and (min-width: 1200px) {
     max-width: 1234px;
     flex-direction: row;
