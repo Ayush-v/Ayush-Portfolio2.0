@@ -1,34 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import ProjectBoxes from "../ProjectBoxes";
+// import ProjectBoxes from "../ProjectBoxes";
 
 const ProjectsSection = () => {
-  const skills = [
-    {
-      title: "mockup1",
-      desc: "lorem ipsum1",
-      image:
-        "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/614304047e80ad7837cbde55_iPhone%2013%20Pro%20Mockup2500-1.jpg",
-    },
-    {
-      title: "lorem2",
-      desc: "lorem ipsum2",
-      image:
-        "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/5e453093913fa86248fa5350_001.jpg",
-    },
-    {
-      title: "lorem3",
-      desc: "lorem ipsum3",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    },
-    {
-      title: "lorem4",
-      desc: "lorem ipsum4",
-      image:
-        "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/5c02b925747aaa04087bb958_iMac_2.jpg",
-    },
-  ];
+  // const skills = [
+  // {
+  //   title: "mockup1",
+  //   desc: "lorem ipsum1",
+  //   image:
+  //     "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/614304047e80ad7837cbde55_iPhone%2013%20Pro%20Mockup2500-1.jpg",
+  // },
+  // {
+  //   title: "lorem2",
+  //   desc: "lorem ipsum2",
+  //   image:
+  //     "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/5e453093913fa86248fa5350_001.jpg",
+  // },
+  // {
+  //   title: "lorem3",
+  //   desc: "lorem ipsum3",
+  //   image:
+  //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  // },
+  // {
+  //   title: "lorem4",
+  //   desc: "lorem ipsum4",
+  //   image:
+  //     "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/5c02b925747aaa04087bb958_iMac_2.jpg",
+  // },
+  // ];
 
   return (
     <Container id="projects">
@@ -36,7 +36,7 @@ const ProjectsSection = () => {
         <Title>
           My<span>.projects()</span>
         </Title>
-        <Flein>
+        {/* <Flein>
           {skills.map((index) => (
             <ProjectBoxes
               key={index.title}
@@ -45,7 +45,8 @@ const ProjectsSection = () => {
               image={index.image}
             />
           ))}
-        </Flein>
+        </Flein> */}
+        <Flein>Coming Soon...</Flein>
       </Wrapper>
     </Container>
   );

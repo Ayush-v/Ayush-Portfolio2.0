@@ -9,34 +9,44 @@ import ToolsSection from "../Components/Sections/ToolsSection";
 import styled from "styled-components";
 
 const IndexPage = () => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 0);
+  // }, []);
 
   return (
+    // <div>
+    //   {loading ? (
+    //     <Loader>
+    //       <title>Front-End Developer | Ayush</title>
+    //       <div id="preloader">
+    //         <div id="loader"></div>
+    //       </div>
+    //     </Loader>
+    //   ) : (
+    //     <Layout>
+    //       <title>Front-End Developer | Ayush</title>
+    //       <HeroSection />
+    //       <AboutSection />
+    //       <ToolsSection />
+    //       <ProjectsSection />
+    //       <ContactSection />
+    //     </Layout>
+    //   )}
+    // </div>
     <div>
-      {loading ? (
-        <Loader>
-          <title>Front-End Developer | Ayush</title>
-          <div id="preloader">
-            <div id="loader"></div>
-          </div>
-        </Loader>
-      ) : (
-        <Layout>
-          <title>Front-End Developer | Ayush</title>
-          <HeroSection />
-          <AboutSection />
-          <ToolsSection />
-          <ProjectsSection />
-          <ContactSection />
-        </Layout>
-      )}
+      <Layout>
+        <title>Front-End Developer | Ayush</title>
+        <HeroSection />
+        <AboutSection />
+        <ToolsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </Layout>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import mail from "/src/images/others/emailIcon.svg";
 import insta from "/src/images/others/insta.svg";
 import github from "/src/images/others/github.svg";
+import linkedin from "/src/images/others/linkedin.svg";
 
 const Footer = () => {
   return (
@@ -25,6 +26,13 @@ const Footer = () => {
         </a>
         <a href="https://github.com/Ayush-v" rel="noreferrer" target="_blank">
           <img src={github} alt="github" />
+        </a>
+        <a
+          href="http://www.linkedin.com/in/ayush2711"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <img src={linkedin} alt="linkedin" />
         </a>
       </RightSide>
     </Container>
