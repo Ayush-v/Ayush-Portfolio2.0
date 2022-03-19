@@ -1,45 +1,33 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import ProjectBoxes from "../ProjectBoxes";
 
+import blogimg from "../../images/projects/blog website.png";
+
 const ProjectsSection = () => {
-  const Have = () => {
+  const Projects = () => {
     const skills = [
-      // {
-      //   title: "mockup1",
-      //   desc: "lorem ipsum1",
-      //   image:
-      //     "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/614304047e80ad7837cbde55_iPhone%2013%20Pro%20Mockup2500-1.jpg",
-      // },
-      // {
-      //   title: "lorem2",
-      //   desc: "lorem ipsum2",
-      //   image:
-      //     "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/5e453093913fa86248fa5350_001.jpg",
-      // },
-      // {
-      //   title: "lorem3",
-      //   desc: "lorem ipsum3",
-      //   image:
-      //     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      // },
-      // {
-      //   title: "lorem4",
-      //   desc: "lorem ipsum4",
-      //   image:
-      //     "https://assets-global.website-files.com/5bfd6f4468ee7943c2d331dd/5c02b925747aaa04087bb958_iMac_2.jpg",
-      // },
+      {
+        title: "Blog Website",
+        desc: "React, MongoDB and Express",
+        codeLink: "https://github.com/Ayush-v/Blog-Website.git",
+        livePreview: "https://ayush-blog-website.herokuapp.com",
+        image: blogimg,
+      },
     ];
 
     if (skills.length >= 1) {
       return (
         <>
-          {skills.map((index) => (
+          {skills.map((index, id) => (
             <ProjectBoxes
-              key={index.title}
+              key={id}
               title={index.title}
               description={index.desc}
               image={index.image}
+              sourceCode={index.codeLink}
+              livePreview={index.livePreview}
             />
           ))}
         </>
@@ -55,9 +43,18 @@ const ProjectsSection = () => {
         <Title>
           My<span>.projects()</span>
         </Title>
-        <Flein>
-          <Have />
-        </Flein>
+        <Carousel
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }}
+        >
+          <Projects />
+        </Carousel>
       </Wrapper>
     </Container>
   );
@@ -65,17 +62,12 @@ const ProjectsSection = () => {
 
 export default ProjectsSection;
 
-const Container = styled.div`
-  .pp {
-    color: aqua;
-  }
-`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
+  overflow: hidden;
   max-width: 1234px;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-  margin-top: 4em;
+  margin: 4em 1.5em;
 
   @media only screen and (min-width: 680px) {
     margin: 6em 5em;
@@ -94,7 +86,8 @@ const Title = styled.h1`
   }
 `;
 
-const Flein = styled.div`
+const Carousel = styled(motion.div)`
+  padding-left: 1em;
   overflow: scroll;
   display: flex;
   gap: 20px;

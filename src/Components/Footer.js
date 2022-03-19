@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import mail from "/src/images/others/emailIcon.svg";
 import insta from "/src/images/others/insta.svg";
@@ -8,7 +9,16 @@ import linkedin from "/src/images/others/linkedin.svg";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 0 },
+      }}
+    >
       <LeftSide>
         <p>Designed & Created by</p>
         <p>Ayush 🤟🏻 2022</p>
@@ -41,7 +51,7 @@ const Footer = () => {
 
 export default Footer;
 
-const Container = styled.footer`
+const Container = styled(motion.footer)`
   margin: 1.5em;
   display: flex;
   justify-content: space-between;

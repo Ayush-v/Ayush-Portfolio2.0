@@ -1,16 +1,57 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import lottie from "lottie-web";
 
 import waves from "/src/images/waves/heroSectionWaves.svg";
-import mockup1 from "/src/images/mockups/mockup1.svg";
-
-import mockup2 from "/src/images/mockups/mockup2.svg";
+import codingAnimation from "../../images/lotties/coding.json";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const container = useRef(null);
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: codingAnimation,
+    });
+  }, []);
+
+  const containerVarients = {
+    hidden: {
+      opacity: 0,
+      x: "-100vw",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
+  const childVarients = {
+    hidden: {
+      opacity: 0,
+      x: "100vw",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
+
   return (
     <Container id="home">
       <Wrapper>
-        <Intro>
+        <Intro variants={containerVarients} initial="hidden" animate="visible">
           <Title>
             Ayush<span>.is()</span>
           </Title>
@@ -19,10 +60,9 @@ const HeroSection = () => {
             UI/UX Designer
           </Description>
         </Intro>
-        <MockupWrapper>
-          <MockupLeft src={mockup2} alt="mockup2" />
-          <MockupRight src={mockup1} alt="mockup1" />
-        </MockupWrapper>
+        <motion.div variants={childVarients} initial="hidden" animate="visible">
+          <AnimaLottie ref={container}></AnimaLottie>
+        </motion.div>
       </Wrapper>
       <BackgroundWave>
         <Waves src={waves} alt="waves" />
@@ -45,7 +85,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: left;
-  gap: 3em;
+  gap: 100px;
 
   @media only screen and (min-width: 680px) {
     margin: 0px 5em;
@@ -80,7 +120,8 @@ const Waves = styled.img`
   object-position: center;
 `;
 
-const Intro = styled.div``;
+const Intro = styled(motion.div)``;
+
 const Title = styled.h1`
   font-size: 60px;
   font-weight: 400;
@@ -96,44 +137,9 @@ const Description = styled.p`
   opacity: 0.8;
 `;
 
-const MockupWrapper = styled.div`
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-
-  position: relative;
-  display: flex;
-  justify-content: center;
-
-  @media only screen and (max-height: 630px) {
-    margin-top: -55px;
-  }
-
-  &:hover img {
-    transform: rotate(0deg);
-  }
-`;
-
-const MockupRight = styled.img`
-  height: 350px;
-  width: auto;
-  transform: rotate(10deg);
-  transition: transform 0.8s ease;
-
-  @media only screen and (max-width: 1200px), screen and (max-height: 300px) {
-    height: 250px;
-  }
-`;
-
-const MockupLeft = styled.img`
-  height: 350px;
-  width: auto;
-  margin-top: 200px;
-  transform: rotate(-6deg);
-  transition: transform 0.8s ease;
-
-  @media only screen and (max-width: 1200px), screen and (max-height: 300px) {
-    height: 250px;
-    margin-top: 30px;
-  }
+const AnimaLottie = styled.div`
+  /* width: 100%;
+  height: 100%; */
+  /* max-width: 600px;
+  max-height: 450px; */
 `;

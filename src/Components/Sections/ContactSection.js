@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 import poly from "/src/images/others/skillpolygon.svg";
 
@@ -37,7 +38,16 @@ const ContactSection = () => {
           <Title>
             Contact<span>.me()</span>
           </Title>
-          <Description>
+          <Description
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+            variants={{
+              visible: { opacity: 1, scale: 1 },
+              hidden: { opacity: 0, scale: 0 },
+            }}
+          >
             I'm interested in freelance opportunities-especially ambitious
             orlarge project. However, if you have other request or question,
             don't hesitate to use the form
@@ -70,7 +80,19 @@ const ContactSection = () => {
             </svg>
           </Mail>
         </TextWrapper>
-        <Form ref={form} onSubmit={sendEmail} autoComplete="off">
+        <Form
+          ref={form}
+          onSubmit={sendEmail}
+          autoComplete="off"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }}
+        >
           <InputDiv>
             <Input type="text" name="name" required />
             <Label>Name</Label>
@@ -165,7 +187,7 @@ const Title = styled.h1`
   }
 `;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
   opacity: 0.9;
 
   background: -webkit-linear-gradient(47deg, #ffffff, #8261ff);
@@ -224,7 +246,7 @@ const Mail = styled.div`
   }
 `;
 
-const Form = styled.form`
+const Form = styled(motion.form)`
   margin-top: 2em;
   max-width: 500px;
 `;

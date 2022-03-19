@@ -16,12 +16,13 @@
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
     "babel-plugin-styled-components": "^2.0.2",
+    "framer-motion": "^6.2.8",
     "gatsby": "^4.5.2",
     "gatsby-plugin-manifest": "^4.5.2",
     "gatsby-plugin-styled-components": "^5.5.0",
+    "lottie-web": "^5.9.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.3.3",
-    "swiper": "^7.4.1"
+    "styled-components": "^5.3.3"
   }
 }

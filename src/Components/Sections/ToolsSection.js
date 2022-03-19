@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import poly from "/src/images/others/skillpolygon.svg";
 
@@ -8,7 +9,16 @@ const ToolsSection = () => {
     <Container>
       <Wrapper>
         <Title>Tools</Title>
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }}
+        >
           <SkillGrid>
             <Skill>
               <img src={poly} alt="poly" />
@@ -57,7 +67,7 @@ const ToolsSection = () => {
             <img src={poly} alt="poly" />
             <h3>More Coming Soon...</h3>
           </Skill>
-        </div>
+        </motion.div>
       </Wrapper>
     </Container>
   );

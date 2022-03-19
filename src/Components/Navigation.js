@@ -7,8 +7,8 @@ import logo from "../images/logo/logo.svg";
 const Navigation = () => {
   const [isActive, setActive] = useState(false);
 
-  const toggleClass = () => {
-    setActive(!isActive);
+  const CloseMenu = () => {
+    setActive(false);
   };
 
   return (
@@ -18,7 +18,7 @@ const Navigation = () => {
           <Logo src={logo} alt="logo" />
           <NavContainer className={isActive ? "open-nav" : null}>
             <svg
-              onClick={toggleClass}
+              onClick={CloseMenu}
               className="close"
               viewBox="0 0 19 19"
               fill="none"
@@ -34,7 +34,7 @@ const Navigation = () => {
                 <StyledLink
                   to="/#home"
                   className="underline"
-                  onClick={toggleClass}
+                  onClick={CloseMenu}
                 >
                   &lt;Home/&gt;
                 </StyledLink>
@@ -43,7 +43,7 @@ const Navigation = () => {
                 <StyledLink
                   to="/#about"
                   className="underline"
-                  onClick={toggleClass}
+                  onClick={CloseMenu}
                 >
                   &lt;About/&gt;
                 </StyledLink>
@@ -52,7 +52,7 @@ const Navigation = () => {
                 <StyledLink
                   to="/#projects"
                   className="underline"
-                  onClick={toggleClass}
+                  onClick={CloseMenu}
                 >
                   &lt;Projects/&gt;
                 </StyledLink>
@@ -61,7 +61,7 @@ const Navigation = () => {
                 <StyledLink
                   to="/#contact"
                   className="underline"
-                  onClick={toggleClass}
+                  onClick={CloseMenu}
                 >
                   &lt;Contact/&gt;
                 </StyledLink>
@@ -69,7 +69,7 @@ const Navigation = () => {
             </NavMenu>
             <SocialMenu>
               <SocialLink
-                to="https://www.instagram.com/ayush_iosdev/"
+                href="https://www.instagram.com/ayush_iosdev/"
                 target="_blank"
               >
                 <svg viewBox="0 0 24 24" fill="none" className="social-icon">
@@ -88,18 +88,18 @@ const Navigation = () => {
                 </svg>
               </SocialLink>
 
-              <SocialLink to="https://github.com/Ayush-v" target="_blank">
+              <SocialLink href="https://github.com/Ayush-v" target="_blank">
                 <svg viewBox="0 0 24 24" fill="none" className="social-icon">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M11.9989 6.10404e-06C5.37254 6.10404e-06 0 5.37255 0 12.0004C0 17.3022 3.43804 21.7996 8.20651 23.3871C8.8069 23.4969 9.02569 23.1263 9.02569 22.8081C9.02569 22.5237 9.01538 21.7686 9.00948 20.7675C5.67163 21.4924 4.96737 19.1586 4.96737 19.1586C4.4215 17.7722 3.63473 17.4031 3.63473 17.4031C2.5452 16.6591 3.71724 16.6738 3.71724 16.6738C4.9217 16.7585 5.55523 17.9107 5.55523 17.9107C6.62562 19.7443 8.36416 19.2146 9.04779 18.9074C9.15682 18.1324 9.46622 17.6035 9.80951 17.3037C7.14497 17.0009 4.34341 15.971 4.34341 11.3727C4.34341 10.0629 4.8112 8.99181 5.57881 8.15274C5.45505 7.84923 5.04325 6.62931 5.69594 4.97695C5.69594 4.97695 6.7037 4.65429 8.99622 6.20719C9.95316 5.94052 10.9801 5.80792 12.0004 5.8035C13.0192 5.80792 14.0461 5.94052 15.0045 6.20719C17.2956 4.65429 18.3011 4.97695 18.3011 4.97695C18.956 6.62931 18.5442 7.84923 18.4205 8.15274C19.1895 8.99181 19.6544 10.0629 19.6544 11.3727C19.6544 15.9828 16.8484 16.9972 14.175 17.2941C14.606 17.6646 14.9898 18.3969 14.9898 19.5166C14.9898 21.1204 14.975 22.4147 14.975 22.8081C14.975 23.1293 15.1909 23.5028 15.8001 23.3856C20.5649 21.7951 24 17.3007 24 12.0004C24 5.37255 18.6267 6.10404e-06 11.9989 6.10404e-06Z"
                     fill="white"
                   />
                 </svg>
               </SocialLink>
               <SocialLink
-                to="http://www.linkedin.com/in/ayush2711"
+                href="http://www.linkedin.com/in/ayush2711"
                 target="_blank"
               >
                 <svg viewBox="0 0 48 48" fill="none" className="social-icon">
@@ -115,7 +115,9 @@ const Navigation = () => {
             className="ham-menu"
             viewBox="0 0 32 22"
             fill="none"
-            onClick={toggleClass}
+            onClick={() => {
+              setActive(true);
+            }}
           >
             <line
               x1="17"
@@ -123,7 +125,7 @@ const Navigation = () => {
               x2="31"
               y2="1"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="1"
@@ -131,7 +133,7 @@ const Navigation = () => {
               x2="15"
               y2="21"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="1"
@@ -139,7 +141,7 @@ const Navigation = () => {
               x2="31"
               y2="11"
               stroke="white"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
         </Nav>
@@ -283,7 +285,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const SocialLink = styled(Link)`
+const SocialLink = styled.a`
   margin: 0;
 
   & {

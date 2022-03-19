@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import waves from "/src/images/waves/AboutSectionWaves.svg";
 import profileBlob from "/src/images/profileBlob/profileBlob.svg";
@@ -12,7 +13,16 @@ const AboutSection = () => {
   return (
     <Container id="about">
       <Wrapper>
-        <TextWrapper>
+        <TextWrapper
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }}
+        >
           <Title>
             About<span>.me()</span>
           </Title>
@@ -73,7 +83,18 @@ const AboutSection = () => {
             </Social>
           </FollowWrapper>
         </TextWrapper>
-        <BlobProfile src={profileBlob} alt="profilephoto" />
+        <BlobProfile
+          src={profileBlob}
+          alt="profilephoto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }}
+        />
         <Dots src={dots} alt="dots" />
       </Wrapper>
 
@@ -142,7 +163,7 @@ const Waves = styled.img`
   object-position: center;
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -203,7 +224,7 @@ const ButtonHireme = styled.a`
   cursor: pointer;
 `;
 
-const BlobProfile = styled.img`
+const BlobProfile = styled(motion.img)`
   /* width="419" height="426" */
 
   width: 400px;
