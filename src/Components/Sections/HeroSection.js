@@ -10,13 +10,15 @@ const HeroSection = () => {
   const container = useRef(null);
 
   useEffect(() => {
-    lottie.loadAnimation({
+    const instance = lottie.loadAnimation({
       container: container.current,
       renderer: "svg",
       loop: true,
       autoplay: true,
       animationData: codingAnimation,
     });
+
+    return () => instance.destroy();
   }, []);
 
   const containerVarients = {

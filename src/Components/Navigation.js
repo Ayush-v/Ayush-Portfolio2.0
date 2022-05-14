@@ -15,7 +15,7 @@ const Navigation = () => {
     <>
       <Header>
         <Nav>
-          <Logo src={logo} alt="logo" />
+          <Logo src={logo} alt="logo" className="logo" />
           <NavContainer className={isActive ? "open-nav" : null}>
             <svg
               onClick={CloseMenu}

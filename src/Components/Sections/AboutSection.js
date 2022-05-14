@@ -33,7 +33,7 @@ const AboutSection = () => {
           <Description>
             Currently Im persuing my Bachelors Degree in Computer Application
             from
-            <strong> Panjab University, Chandighar </strong>
+            <strong> Panjab University, Chandigarh </strong>
           </Description>
           <Description>
             Started as a designer desigining websites & mobile apps. started
