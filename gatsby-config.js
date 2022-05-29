@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `ayush-portfolio2.0`,
-    // siteUrl: `https://www.yourdomain.tld`,
+    title: `Ayush Portfolio`,
+    description: `Creative FrontEnd Web developer, UI/UX Designer`,
   },
   plugins: [
     "gatsby-plugin-styled-components",

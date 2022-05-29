@@ -26,7 +26,15 @@ const ToolsSection = () => {
             </Skill>
             <Skill>
               <img src={poly} alt="poly" />
+              <h3>Nextjs</h3>
+            </Skill>
+            <Skill>
+              <img src={poly} alt="poly" />
               <h3>Gatsbyjs</h3>
+            </Skill>
+            <Skill>
+              <img src={poly} alt="poly" />
+              <h3>TailwindCSS</h3>
             </Skill>
             <Skill>
               <img src={poly} alt="poly" />
@@ -44,7 +52,6 @@ const ToolsSection = () => {
               <img src={poly} alt="poly" />
               <h3>SwiftUI</h3>
             </Skill>
-            {/* <br /> */}
             <Skill>
               <img src={poly} alt="poly" />
               <h3>Figma</h3>
