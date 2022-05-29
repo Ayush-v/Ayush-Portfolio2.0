@@ -139,9 +139,4 @@ const Description = styled.p`
   opacity: 0.8;
 `;
 
-const AnimaLottie = styled.div`
-  /* width: 100%;
-  height: 100%; */
-  /* max-width: 600px;
-  max-height: 450px; */
-`;
+const AnimaLottie = styled.div``;

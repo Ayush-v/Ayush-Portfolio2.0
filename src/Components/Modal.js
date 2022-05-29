@@ -13,8 +13,18 @@ const Modal = ({ closeModal, title, image, sourceCode, livePreview, desc }) => {
       y: 0,
       transition: {
         type: "spring",
-        stiffness: 120,
+        // stiffness: 70,
+        duration: 0.5,
       },
+    },
+  };
+
+  const bgVarient = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
     },
   };
 
@@ -31,12 +41,12 @@ const Modal = ({ closeModal, title, image, sourceCode, livePreview, desc }) => {
       <Container
         ref={modalRef}
         onClick={modalBackClose}
-        variants={containerVarients}
+        variants={bgVarient}
         initial="hidden"
         animate="visible"
       >
         <Wrapper>
-          <ModalBackground>
+          <ModalBackground variants={containerVarients}>
             <ModalHeader>
               <h2>{title}</h2>
               <CloseButton
@@ -95,7 +105,7 @@ const Container = styled(motion.div)`
 
 const Wrapper = styled.div``;
 
-const ModalBackground = styled.div`
+const ModalBackground = styled(motion.div)`
   position: relative;
   width: 380px;
   /* height: 450px; */

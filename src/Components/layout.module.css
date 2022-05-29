@@ -111,28 +111,3 @@ button {
   width: 5px;
   background: #000;
 }
-
-body {
-  background: linear-gradient(90deg, #000000 21px, #00000000 1%) center,
-    linear-gradient(#000000 21px, transparent 1%) center, rgb(255, 0, 0);
-  background: linear-gradient(90deg, hsl(0, 0%, 0%) 21px, #00000000 1%) center,
-    linear-gradient(hsl(0, 0%, 0%) 21px, transparent 1%) center,
-    rgb(107, 103, 103);
-  background-position-x: center, center, 0%;
-  background-position-y: center, center, 0%;
-  background-repeat: repeat, repeat, repeat;
-  background-attachment: scroll, scroll, scroll;
-  /* background-image: linear-gradient(
-      90deg,
-      rgb(34, 17, 17) 21px,
-      rgba(238, 37, 37, 0) 1%
-    ),
-    linear-gradient(rgb(22, 17, 34) 21px, transparent 1%), none; */
-  background-size: auto, auto, auto;
-  background-origin: padding-box, padding-box, padding-box;
-  background-clip: border-box, border-box, border-box;
-  background-size: 22px 22px;
-  color: #fff;
-  overscroll-behavior: none;
-  /* background-color: rgb(0, 0, 0); */
-}
