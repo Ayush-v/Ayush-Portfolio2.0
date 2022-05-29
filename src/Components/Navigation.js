@@ -238,8 +238,8 @@ const NavMenu = styled.ul`
 `;
 
 const Logo = styled.img`
-  width: 42px;
-  height: auto;
+  width: 60px;
+  height: 60px;
 `;
 
 const StyledLink = styled(Link)`
